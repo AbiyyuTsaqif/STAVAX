@@ -2,7 +2,9 @@ import 'dart:html';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:test/constants/colors.dart';
+import 'package:stavax/model/playlisthome.dart';
+import 'package:stavax/widgets/playlist_home.dart';
+import '../constants/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +31,7 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
+  final playlistvar_ = PlaylistHome.playlist_home();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +76,7 @@ class _RootPageState extends State<RootPage> {
                       Container(
                         padding: EdgeInsets.all(8),
                         width: 300,
-                        height: 320,
+                        height: 240,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
                           color: color2,
@@ -98,7 +101,7 @@ class _RootPageState extends State<RootPage> {
                                   const SizedBox(
                                     width: 10,
                                   ),
-                                  const Column(
+                                  Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
@@ -326,190 +329,10 @@ class _RootPageState extends State<RootPage> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(right: 10),
-            padding: const EdgeInsets.all(10), // Add padding to the container
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment:
-                      Alignment.topCenter, // Align the image to the top center
-                  child: Image.asset(
-                    "assets/1.png",
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ), // Add vertical spacing between the image and text
-                const Text(
-                  "Chill Vibes",
-                  style: TextStyle(
-                    height: 2, // Adjust the line height as desired
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Bring back your mood with these chill ...",
-                  style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey),
-                ),
-              ],
+          for (PlaylistHome iniPlaylist_ in playlistvar_)
+            playlist_home(
+              iniplaylist: iniPlaylist_,
             ),
-            width: 120,
-            height: 148,
-            decoration: BoxDecoration(
-              color: color3,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(right: 10),
-            padding: const EdgeInsets.all(10), // Add padding to the container
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment:
-                      Alignment.topCenter, // Align the image to the top center
-                  child: Image.asset(
-                    "assets/1.png",
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ), // Add vertical spacing between the image and text
-                const Text(
-                  "Chill Vibes",
-                  style: TextStyle(
-                    height: 2, // Adjust the line height as desired
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Bring back your mood with these chill ...",
-                  style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey),
-                ),
-              ],
-            ),
-            width: 120,
-            height: 148,
-            decoration: BoxDecoration(
-              color: color3,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(right: 10),
-            padding: const EdgeInsets.all(10), // Add padding to the container
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment:
-                      Alignment.topCenter, // Align the image to the top center
-                  child: Image.asset(
-                    "assets/1.png",
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ), // Add vertical spacing between the image and text
-                const Text(
-                  "Chill Vibes",
-                  style: TextStyle(
-                    height: 2, // Adjust the line height as desired
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Bring back your mood with these chill ...",
-                  style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey),
-                ),
-              ],
-            ),
-            width: 120,
-            height: 148,
-            decoration: BoxDecoration(
-              color: color3,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(right: 10),
-            padding: const EdgeInsets.all(10), // Add padding to the container
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment:
-                      Alignment.topCenter, // Align the image to the top center
-                  child: Image.asset(
-                    "assets/1.png",
-                    width: 100,
-                    height: 100,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ), // Add vertical spacing between the image and text
-                const Text(
-                  "Chill Vibes",
-                  style: TextStyle(
-                    height: 2, // Adjust the line height as desired
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "Bring back your mood with these chill ...",
-                  style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey),
-                ),
-              ],
-            ),
-            width: 120,
-            height: 148,
-            decoration: BoxDecoration(
-              color: color3,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
         ],
       ),
     );
