@@ -53,7 +53,7 @@ class PlaylistHome {
         id: 7,
         title: 'UPBEAT!!',
         subtitle: 'just up beat, nothing special',
-        image: 'assets/5.png',
+        image: 'assets/7.png',
       ),
     ];
   }
