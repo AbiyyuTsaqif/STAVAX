@@ -2,6 +2,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:stavax/model/recentlyPlayedHome.dart';
+import 'package:stavax/model/songsList.dart';
+import 'package:stavax/screen/search.dart';
 import 'package:stavax/widgets/recentlyPlayed_home.dart';
 import '../widgets/playlist_home.dart';
 import '../constants/colors.dart';
@@ -16,7 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final playlistvar_ = PlaylistHome.playlist_home();
+  // final playlistvar_ = PlaylistHome.playlist_home();
   final recentlyPlayedvar_ = recentlyPlayedHome.recentlyPlayed_home();
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class _HomeState extends State<Home> {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
@@ -66,6 +68,10 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: ClipRRect(child: Container()),
+          // )
         ],
       ),
     );
@@ -85,10 +91,23 @@ class _HomeState extends State<Home> {
             style: TextStyle(
                 fontSize: 24, fontWeight: FontWeight.w700, color: Colors.white),
           ),
-          Icon(
-            Icons.search,
-            color: Colors.white,
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const search_screen()),
+              );
+            },
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
           ),
+          // IconButton(
+          //   Icons.search,
+          //   onPressed: () {},
+          //   color: Colors.white,
+          // ),
         ],
       ),
     );
@@ -103,14 +122,26 @@ class _HomeState extends State<Home> {
         color: color2,
         borderRadius: BorderRadius.circular(14),
       ),
-      child: ListView(
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          for (PlaylistHome iniPlaylist_ in playlistvar_)
-            playlist_home(
-              iniplaylist: iniPlaylist_,
-            ),
-        ],
+        itemCount: playlistHome_list
+            .length, // Set the itemCount to the length of your list
+        itemBuilder: (context, index) {
+          if (index >= playlistHome_list.length) {
+            return null; // Return null if the index is out of range
+          }
+          final PlaylistHome list = playlistHome_list[index];
+          return playlist_home(iniplaylist: list);
+        },
+
+        // children: <Widget>[
+
+        //   return
+        // for (PlaylistHome iniPlaylist_ in playlistvar_)
+        //   playlist_home(
+        //     iniplaylist: iniPlaylist_,
+        //   ),
+        // ],
       ),
     );
   }
@@ -124,14 +155,17 @@ class _HomeState extends State<Home> {
         borderRadius: BorderRadius.circular(14),
         color: color2,
       ),
-      child: ListView(
+      child: ListView.builder(
         scrollDirection: Axis.vertical,
-        children: <Widget>[
-          for (recentlyPlayedHome inirecent_ in recentlyPlayedvar_) //editttttt
-            recentlyPlayed_home(
-              inirecent: inirecent_,
-            ),
-        ],
+        itemCount: songsList_list
+            .length, // Set the itemCount to the length of your list
+        itemBuilder: (context, index) {
+          if (index >= songsList_list.length) {
+            return null; // Return null if the index is out of range
+          }
+          final SongsList list = songsList_list[index];
+          return recentlyPlayed_home(inirecent: list);
+        },
       ),
     );
   }

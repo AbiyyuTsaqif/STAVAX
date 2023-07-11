@@ -70,6 +70,9 @@ flutter:
     - assets/recentlyplayed_home/3.png
     - assets/recentlyplayed_home/4.png
     - assets/musicplaying/1.png
+    - assets/musicplaying/2.png
+    - assets/musicplaying/3.png
+    - assets/musicplaying/4.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -13,54 +13,54 @@ class playlist_home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {
-          print("haha");
-        },
-        child: Container(
-          margin: EdgeInsets.only(right: 10),
-          padding: const EdgeInsets.all(10), // Add padding to the container
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                alignment:
-                    Alignment.topCenter, // Align the image to the top center
-                child: Image.asset(
-                  iniplaylist.image!,
-                  width: 100,
-                  height: 100,
-                ),
+      onTap: () {
+        print("haha");
+      },
+      child: Container(
+        margin: EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              alignment: Alignment.topCenter,
+              child: Image.asset(
+                iniplaylist.image,
+                width: 100,
+                height: 100,
               ),
-              const SizedBox(
-                height: 20,
-              ), // Add vertical spacing between the image and text
-              Text(
-                iniplaylist.title!,
-                style: TextStyle(
-                  height: 2, // Adjust the line height as desired
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              iniplaylist.title,
+              style: TextStyle(
+                height: 2,
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                iniplaylist.subtitle!,
-                style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey),
-              ),
-            ],
-          ),
-          width: 120,
-          height: 148,
-          decoration: BoxDecoration(
-            color: color3,
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
+            ),
+            SizedBox(
+              height: 4,
+            ),
+            Text(
+              iniplaylist.subtitle,
+              style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey),
+            ),
+          ],
+        ),
+        width: 120,
+        height: 148,
+        decoration: BoxDecoration(
+          color: color3,
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stavax/screen/musicplaying.dart';
+import 'package:stavax/screen/search.dart';
 import '../screen/Home.dart';
 
 void main() {

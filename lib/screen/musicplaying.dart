@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:stavax/constants/colors.dart';
+import 'package:stavax/model/songsList.dart';
 
 class musicplaying extends StatefulWidget {
-  const musicplaying({super.key});
+  final SongsList listSongs;
+  const musicplaying({Key? key, required this.listSongs}) : super(key: key);
 
   @override
   State<musicplaying> createState() => _musicplayingState();
@@ -32,7 +34,7 @@ class _musicplayingState extends State<musicplaying> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
-                      "assets/musicplaying/1.png",
+                      widget.listSongs.image,
                       width: 290,
                       height: 290,
                     ),
@@ -57,7 +59,7 @@ class _musicplayingState extends State<musicplaying> {
                       height: 58,
                     ),
                     Text(
-                      "Flaming Hot Cheetos",
+                      widget.listSongs.title,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w700,
@@ -68,7 +70,7 @@ class _musicplayingState extends State<musicplaying> {
                       height: 11,
                     ),
                     Text(
-                      "Clairo",
+                      widget.listSongs.artist,
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
@@ -159,9 +161,14 @@ class _musicplayingState extends State<musicplaying> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(
-            Icons.arrow_back_rounded,
-            color: Colors.white,
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+            ),
           ),
           Text(
             "Now Playing",
@@ -171,9 +178,24 @@ class _musicplayingState extends State<musicplaying> {
               color: Colors.white,
             ),
           ),
-          Icon(
-            Icons.menu,
-            color: Colors.white,
+          IconButton(
+            onPressed: () {
+              // showDialog(
+              //   context: context,
+              //   builder: (BuildContext context) {
+              //     return AlertDialog(
+              //         backgroundColor:
+              //             Colors.blue, // Set the background color to blue
+              //         content: ListView(
+              //           children: [Text("ini vutton")],
+              //         ));
+              //   },
+              // ); tar edit lagi
+            },
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
