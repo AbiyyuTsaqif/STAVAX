@@ -25,7 +25,7 @@ class _musicplayingState extends State<musicplaying> {
               children: [
                 _buildAppBar(),
                 const SizedBox(
-                  height: 50,
+                  height: 40,
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -52,7 +52,7 @@ class _musicplayingState extends State<musicplaying> {
               ),
               child: Container(
                 width: 420,
-                height: 304,
+                height: 340,
                 child: Column(
                   children: [
                     SizedBox(
@@ -114,27 +114,27 @@ class _musicplayingState extends State<musicplaying> {
                       children: [
                         Icon(
                           Icons.loop_sharp,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 42,
                         ),
                         Icon(
                           Icons.skip_previous_sharp,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 50,
                         ),
                         Icon(
                           Icons.play_arrow_sharp,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 50,
                         ),
                         Icon(
                           Icons.skip_next_sharp,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 50,
                         ),
                         Icon(
                           Icons.shuffle_sharp,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 42,
                         ),
                       ],
@@ -155,7 +155,7 @@ class _musicplayingState extends State<musicplaying> {
   Widget _buildAppBar() {
     return Container(
       padding: EdgeInsets.symmetric(
-        vertical: 40,
+        vertical: 28,
       ),
       decoration: BoxDecoration(color: color1),
       child: Row(

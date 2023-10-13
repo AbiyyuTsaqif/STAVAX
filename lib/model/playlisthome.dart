@@ -77,7 +77,8 @@ var playlistHome_list = [
   PlaylistHome(
     id: 1,
     title: 'Morning Work',
-    subtitle: 'A cup of coffe can heals ur souls ...',
+    subtitle:
+        'A cup of coffe can heals ur souls accompanied with a chill songs to heal your sould in the morning shine',
     image: 'assets/1.png',
   ),
   PlaylistHome(

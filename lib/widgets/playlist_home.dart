@@ -48,9 +48,11 @@ class playlist_home extends StatelessWidget {
             Text(
               iniplaylist.subtitle,
               style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey),
+                fontSize: 10,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),
