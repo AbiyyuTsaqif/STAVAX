@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:stavax/screen/detailedPlaylist.dart';
 import 'package:stavax/screen/musicplaying.dart';
 import 'package:stavax/screen/playlistScreen.dart';
 import 'package:stavax/screen/search.dart';

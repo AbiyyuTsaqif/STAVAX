@@ -19,7 +19,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.19.2 <3.0.0"
+  sdk: ">=3.1.0-298.0.dev <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -73,6 +73,24 @@ flutter:
     - assets/musicplaying/2.png
     - assets/musicplaying/3.png
     - assets/musicplaying/4.png
+    - assets/playlistList/1.png
+    - assets/playlistList/2.png
+    - assets/playlistList/3.png
+    - assets/playlistList/4.png
+    - assets/playlistList/5.png
+    - assets/playlistList/6.png
+    - assets/playlistList/7.png
+    - assets/playlist1/playlist1_gambar1.jpg
+    - assets/playlist1/playlist1_gambar2.jpg
+    - assets/playlist1/playlist1_gambar3.jpg
+    - assets/playlist2/playlist2_gambar1.jpg
+    - assets/playlist2/playlist2_gambar2.jpg
+    - assets/playlist2/playlist2_gambar3.jpg
+    - assets/playlist3/playlist3_gambar1.jpg
+    - assets/playlist3/playlist3_gambar2.jpg
+    - assets/playlist3/playlist3_gambar3.jpg
+  # assets:
+  #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

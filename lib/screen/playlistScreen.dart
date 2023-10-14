@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stavax/constants/colors.dart';
 import 'package:stavax/model/playlisthome.dart';
+<<<<<<< HEAD
+=======
+import 'package:stavax/screen/detailedPlaylist.dart';
+>>>>>>> 97508684a44ebd2c336a2fcf86ef84de110129fe
 
 class playlistScreen extends StatefulWidget {
   const playlistScreen({super.key});
