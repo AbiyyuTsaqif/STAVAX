@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:stavax/model/recentlyPlayedHome.dart';
 import 'package:stavax/model/songsList.dart';
+import 'package:stavax/screen/playlistScreen.dart';
 import 'package:stavax/screen/search.dart';
 import 'package:stavax/widgets/recentlyPlayed_home.dart';
 import '../widgets/playlist_home.dart';
@@ -49,6 +50,49 @@ class _HomeState extends State<Home> {
                       ),
                       _buildPlayList(),
                       Container(
+                        width: double.infinity,
+                        height: 45,
+                        decoration: BoxDecoration(
+                          color: color2,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(14),
+                            bottomRight: Radius.circular(14),
+                          ),
+                        ),
+                        child: Center(
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => (playlistScreen()),
+                                ),
+                              );
+                            },
+                            child: Container(
+                                width: 123,
+                                height: 26,
+                                decoration: ShapeDecoration(
+                                  color: Color(0xFF76BCFF),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4)),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'View Playlist',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.w700,
+                                      height: 0,
+                                    ),
+                                  ),
+                                )),
+                          ),
+                        ),
+                      ),
+                      Container(
                         margin: EdgeInsets.symmetric(
                           vertical: 10,
                         ),
@@ -80,7 +124,7 @@ class _HomeState extends State<Home> {
   Widget _buildAppBar() {
     return Container(
       padding: EdgeInsets.symmetric(
-        vertical: 40,
+        vertical: 25,
       ),
       decoration: BoxDecoration(color: color1),
       child: Row(
@@ -120,7 +164,8 @@ class _HomeState extends State<Home> {
       height: 226,
       decoration: BoxDecoration(
         color: color2,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(14), topRight: Radius.circular(14)),
       ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -150,7 +195,7 @@ class _HomeState extends State<Home> {
     return Container(
       padding: EdgeInsets.all(8),
       width: 300,
-      height: 330,
+      height: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         color: color2,

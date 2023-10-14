@@ -15,3 +15,4 @@ class HexColor extends Color {
 Color color1 = HexColor("1C2127");
 Color color2 = HexColor("0B385F");
 Color color3 = HexColor("3373B0");
+Color color4 = HexColor("");
